@@ -1,0 +1,219 @@
+body{
+    background-image: url("../assets/beach.jpg");
+    font-family: 'Poiret One';font-size: 22px; font-weight: 10;
+    justify-content: center;
+    top: 5rem;
+}
+header {
+    display: flex;
+    margin: 0px;
+    justify-content: flex-end;
+    background-color: cadetblue;
+    opacity:80%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+}
+
+header .header__nav {
+    clear: both;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+    overflow: hidden;
+}
+
+header .menu-icon {
+    cursor: pointer;
+    display: inline-block;
+    float: right;
+    padding: 28px 20px;
+    position: relative;
+    user-select: none;
+}
+
+header .menu-icon .navicon {
+    background: #ffffff;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: background .2s ease-out;
+    width: 18px;
+}
+
+header .menu-icon .navicon:before,
+header .menu-icon .navicon:after {
+    background: #ffffff;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+}
+
+header .menu-icon .navicon:before {
+    top: 5px;
+}
+
+header .menu-icon .navicon:after {
+    top: -5px;
+}
+
+header .menu-btn {
+    display: none;
+}
+
+header .menu-btn:checked ~ .header__nav  {
+    max-height: 240px;
+    overflow: auto;
+}
+
+header .menu-btn:checked ~ .menu-icon .navicon {
+    background: transparent;
+}
+
+header .menu-btn:checked ~ .menu-icon .navicon:before {
+    transform: rotate(-45deg);
+}
+
+header .menu-btn:checked ~ .menu-icon .navicon:after {
+    transform: rotate(45deg);
+}
+
+header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+    top: 0;
+}
+
+@media (min-width: 48em) {
+    header button {
+        float: left;
+    }
+    header button a {
+        padding: 20px 30px;
+    }
+    header .header__nav {
+        clear: none;
+        float: right;
+        max-height: none;
+    }
+    header .menu-icon {
+        display: none;
+    }
+}
+
+#Intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5rem 10% 0rem 10%;
+    background-color:rgba(255,255,255,0.8);
+    border-radius: 1rem;
+    padding: 3rem;
+    backdrop-filter: blur(10px);
+}
+
+.main {
+    display: grid;
+    grid-template-columns: minmax(35rem, auto) minmax(35rem, auto) minmax(35rem, auto);
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+@media (max-width : 1600px) {
+    .main {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width : 800px) {
+    .main {
+        grid-template-columns: 1fr;
+    }
+}
+
+.main__icon {
+    max-height: 15rem;
+    border-radius: 15rem;
+}
+.header__button {
+    background-color: cadetblue;
+    margin: 0.5rem;
+    padding: 0.5rem 1rem;
+    border: solid 0.15rem white;
+    border-radius: 0.5rem;
+}
+
+.header__link {
+    color: white;
+    font-size: large;
+    text-decoration: none;
+    font-family: 'Poiret One';font-size: 22px;
+    font-weight: bolder;
+}
+
+.header__button:hover {
+    transform: rotate(-3deg) scale(1.2);
+    background-color: #EDABA4;
+    transition: all 1.5s;
+}
+
+.main__body{
+    background-color:rgba(255,255,255,0.8);
+    border-radius: 1rem;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0rem;
+    margin: 2rem;
+    max-height: 32rem;
+    grid-row-start: span 3;
+    backdrop-filter: blur(10px);
+}
+.main__body--small{
+    grid-row-start: span 2;
+    max-height: 25rem;
+}
+.main__body--long {
+    grid-row-start: span 4;
+    max-height: 50rem;
+}
+.main__body--longer {
+    grid-row-start: span 5;
+    max-height: 80rem;
+}
+.main__body__section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.main__body__section__div{
+    display: flex;
+}
+
+.main__h1{
+    color: #416C6E;
+}
+
+.main__h2{
+    color: #44bfd3;
+    font-size: 1.8rem;
+}
+
+.main__p{
+    color: #132425;
+}
+
+.main__img{
+    max-width: 10rem;
+}
+
+footer {
+    background-color: #EDABA4;
+    display: flex;
+    justify-content: space-around;
+    color: white;
+    padding: 2 rem;
+    padding-bottom: 20rem;
+}
